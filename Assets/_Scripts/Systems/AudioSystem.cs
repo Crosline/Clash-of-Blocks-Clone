@@ -20,9 +20,9 @@ public class AudioSystem : Singleton<AudioSystem> {
     private AudioClip[] audioClips;
 
     void Start() {
-        musicSource.clip = audioClips.Last();
+        /*musicSource.clip = audioClips.Last();
         musicSource.Play();
-        musicSource.loop = true;
+        musicSource.loop = true;*/
     }
 
     public void PlayPop() {
