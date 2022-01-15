@@ -96,12 +96,15 @@ public class Node : MonoBehaviour {
     }
 
     IEnumerator Roll(Transform obj, Vector3 anchor, Vector3 axis, Vector3 dir) {
+        AudioSystem.Instance.PlayPop();
         if (nodeType != GridType.Player)
             yield return new WaitForSeconds(0.01f);
         for (int i = 0; i < (180 / _rollSpeed); i++) {
             obj.transform.RotateAround(anchor, axis, _rollSpeed);
             yield return new WaitForSeconds(0.01f);
         }
+
+
         obj.transform.rotation = Quaternion.identity;
         obj.transform.position = transform.position + dir;
         obj.GetComponent<Node>().StartRoll();

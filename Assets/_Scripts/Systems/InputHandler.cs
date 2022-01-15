@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour {
 
-    public bool isActive;
+    public bool isActive = false;
 
-    void Start() => isActive = false;
+    void Awake() => isActive = false;
 
     void Update() {
         if (!isActive) return;

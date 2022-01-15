@@ -10,19 +10,32 @@ public class AudioSystem : Singleton<AudioSystem> {
     [SerializeField]
     private AudioSource effectSource;
 
+    /*
+    // Will not be implemented
     [SerializeField]
     private AudioMixer audioMixer;
+    */
 
     [SerializeField]
     private AudioClip[] audioClips;
 
-    // Start is called before the first frame update
     void Start() {
-
+        musicSource.clip = audioClips.Last();
+        musicSource.Play();
+        musicSource.loop = true;
     }
 
-    // Update is called once per frame
-    void Update() {
+    public void PlayPop() {
+        if (effectSource.isPlaying)
+            return;
+        effectSource.clip = audioClips[0];
+        effectSource.Play();
+    }
 
+    public void MuteMusic() {
+        // Will not be implemented
+    }
+    public void MuteEffects() {
+        // Will not be implemented
     }
 }

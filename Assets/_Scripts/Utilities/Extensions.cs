@@ -19,11 +19,14 @@ namespace _Utilities {
 
 			return false;
 		}
-		
+
 		public static T Rand<T>(this IList<T> list) {
 			return list[Random.Range(0, list.Count)];
 		}
-		
+		public static T Last<T>(this IList<T> list, int index = 0) {
+			return list[list.Count - 1 - index];
+		}
+
 		public static void SetLayersRecursively(this GameObject g, int layer) {
 			g.layer = layer;
 			foreach (Transform t in g.transform) {
