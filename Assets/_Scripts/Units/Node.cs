@@ -14,7 +14,8 @@ public class Node : MonoBehaviour {
 
     private void Awake() {
         bool tween = false;
-
+        
+        // Ah be abi
         if (transform.CompareTag("Player")) {
             nodeType = GridType.Player;
         } else if (transform.CompareTag("Enemy1")) {
